@@ -1,1 +1,4 @@
-# jizaojiCompany
+# 极造极信息科技有限公司官网
+## 基于VUE2+ElementPlus框架
+## 展示公司业务+方向
+## 产品案例+报价
