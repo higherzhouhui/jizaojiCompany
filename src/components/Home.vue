@@ -1,21 +1,29 @@
 <template>
   <div class="container">
     <div class="carousel">
-      <el-carousel :interval="4000" type="card" height="200px">
-        <el-carousel-item v-for="item in 6" :key="item">
-          <h3 class="medium">{{ item }}</h3>
-        </el-carousel-item>
-      </el-carousel>
+      <el-carousel height="500px" trigger="click">
+      <el-carousel-item v-for="item in carousel" :key="item">
+        <div class="imgWrapper">
+          <img :src="item" class="carouselImg"/>
+        </div>
+      </el-carousel-item>
+    </el-carousel>
     </div>
   </div>
 </template>
 
 <script>
+import c1 from '../assets/home/c1.png'
+import c2 from '../assets/home/c2.png'
+import c4 from '../assets/home/c4.png'
+import c5 from '../assets/home/c5.png'
+import c7 from '../assets/home/c7.png'
 export default {
   name: 'Home',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      carousel: [c1, c2, c4, c5, c7]
     }
   }
 }
@@ -25,21 +33,21 @@ export default {
 <style scoped lang="less">
 .container {
   .carousel {
-    .el-carousel__item h3 {
-      color: #475669;
-      font-size: 14px;
-      opacity: 0.75;
-      line-height: 200px;
-      margin: 0;
+    height: 500px;
+    .imgWrapper {
+      width: 100%;
+      height: 0;
+      padding-bottom: 30%;
+      position: relative;
     }
-
-    .el-carousel__item:nth-child(2n) {
-      background-color: #99a9bf;
-    }
-
-    .el-carousel__item:nth-child(2n + 1) {
-      background-color: #d3dce6;
-    }
+   .carouselImg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: contain;
+   }
   }
 }
 </style>

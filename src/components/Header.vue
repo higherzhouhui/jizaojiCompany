@@ -38,27 +38,30 @@
 </template>
 
 <script>
-import { routesConfig } from "../router";
+import { routesConfig } from '../router'
 export default {
-  name: "Header",
-  data() {
+  name: 'Header',
+  data () {
     return {
       routesConfig: routesConfig
-    };
+    }
   },
   methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath);
-      this.$router.push(key);
+    handleSelect (key, keyPath) {
+      console.log(key, keyPath)
+      this.$router.push(key)
     }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 .container {
   background-color: #545c64;
+  .el-menu-demo {
+    border: none;
+  }
   .content {
     width: 1200px;
     margin: 0 auto;
