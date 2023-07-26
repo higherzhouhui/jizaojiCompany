@@ -49,7 +49,7 @@ export default {
    }
   }
 }
-/deep/ .el-carousel__container {
+  /deep/ .el-carousel__container {
       width: 100%;
       height: 0;
       padding-bottom: 26%;
