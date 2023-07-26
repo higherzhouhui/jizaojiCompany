@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="carousel">
-      <el-carousel height="500px" trigger="click">
+      <el-carousel trigger="click">
       <el-carousel-item v-for="item in carousel" :key="item">
         <div class="imgWrapper">
           <img :src="item" class="carouselImg"/>
@@ -33,11 +33,10 @@ export default {
 <style scoped lang="less">
 .container {
   .carousel {
-    height: 500px;
     .imgWrapper {
       width: 100%;
       height: 0;
-      padding-bottom: 30%;
+      padding-bottom: 26%;
       position: relative;
     }
    .carouselImg {
@@ -46,8 +45,13 @@ export default {
     position: absolute;
     left: 0;
     top: 0;
-    object-fit: contain;
+    object-fit: fill;
    }
   }
 }
+/deep/ .el-carousel__container {
+      width: 100%;
+      height: 0;
+      padding-bottom: 26%;
+  }
 </style>
