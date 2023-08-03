@@ -1,15 +1,15 @@
 <template>
     <div class="container">
         <div class="content">
-            <img src="/static/logo.png" />
+            <img src="@/assets/logo.png" />
             <div class="list">
                 <div class="item">小程序</div>
-                <div class="item">公众号</div>
-                <div class="item">公众号</div>
-                <div class="item">公众号</div>
-                <div class="item">公众号</div>
-                <div class="item">公众号</div>
-                <div class="item">公众号</div>
+                <div class="item">搭建网站</div>
+                <div class="item">安卓开发</div>
+                <div class="item">苹果开发</div>
+                <div class="item">uniapp开发</div>
+                <div class="item">H5开发</div>
+                <div class="item">服务器托管</div>
             </div>
             <div class="title">商务合作</div>
             <div class="list">
@@ -41,7 +41,7 @@
   <style scoped lang="less">
   .container {
     width: 100%;
-    background-image: url('/static/footer/bg.png');
+    background-image: url('../assets/footer/bg.png');
     background-size: 100% 100%;
   }
   </style>
