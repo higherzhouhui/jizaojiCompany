@@ -13,16 +13,15 @@
 </template>
 
 <script>
-import c1 from '../assets/home/c1.png'
-import c2 from '../assets/home/c2.png'
-import c4 from '../assets/home/c4.png'
-import c5 from '../assets/home/c5.png'
-import c7 from '../assets/home/c7.png'
+import c1 from '@/assets/home/c1.png'
+import c2 from '@/assets/home/c2.png'
+import c4 from '@/assets/home/c4.png'
+import c5 from '@/assets/home/c5.png'
+import c7 from '@/assets/home/c7.png'
 export default {
   name: 'Home',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
       carousel: [c1, c2, c4, c5, c7]
     }
   }

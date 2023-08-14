@@ -1,28 +1,32 @@
 <template>
     <div class="container">
-        <div class="content">
-            <img src="@/assets/logo.png" />
-            <div class="list">
-                <div class="item">小程序</div>
-                <div class="item">搭建网站</div>
-                <div class="item">安卓开发</div>
-                <div class="item">苹果开发</div>
-                <div class="item">uniapp开发</div>
-                <div class="item">H5开发</div>
-                <div class="item">服务器托管</div>
-            </div>
-            <div class="title">商务合作</div>
-            <div class="list">
-                <div class="list">联系电话：18516010812</div>
-                <div class="list">邮箱地址：782492184@qq.com</div>
-                <div class="list">联系地址：重庆市观音桥</div>
+        <div class="main">
+            <img src="@/assets/footer/bg.png" class="bg" />
+            <div class="content">
+              <img src="@/assets/logo.png" class="logo" />
+              <div class="list">
+                  <div class="item" v-for="item in productList">
+                    <img :src="item.logo" />
+                    <span>{{ item.title }}</span>
+                  </div>
+              </div>
+              <div class="title">
+                <img src="@/assets/footer/hezuo.png" />
+                商务合作
+              </div>
+              <div class="list plist">
+                  <div class="item">联系电话：18516010812</div>
+                  <div class="item">邮箱地址：782492184@qq.com</div>
+                  <div class="item">联系地址：重庆市观音桥红鼎国际C座29-12</div>
+              </div>
             </div>
         </div>
         <div class="copyright">
-        Copyright © 2021 - 2023 版权所有©重庆极造极信息科技有限公司 |
-    <a href="https://beian.miit.gov.cn/" target="_blank">
-      渝ICP备2022006347号-1
-    </a></div>
+          Copyright © 2021 - 2023 版权所有©重庆极造极信息科技有限公司 |
+          <a href="https://beian.miit.gov.cn/" target="_blank">
+            渝ICP备2022006347号-1
+          </a>
+      </div>
     </div>
   </template>
   
@@ -31,7 +35,15 @@
     name: 'footer',
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        productList: [
+          {logo: require('@/assets/footer/web.png'), title: '搭建网站'},
+          {logo: require('@/assets/footer/xcx.png'), title: '小程序'},
+          {logo: require('@/assets/footer/android.png'), title: '安卓开发'},
+          {logo: require('@/assets/footer/apple.png'), title: '苹果开发'},
+          {logo: require('@/assets/footer/h5.png'), title: 'H5开发'},
+          {logo: require('@/assets/footer/uniapp.png'), title: 'uniapp开发'},
+          {logo: require('@/assets/footer/server.png'), title: '服务器托管'},
+        ]
       }
     }
   }
@@ -41,7 +53,87 @@
   <style scoped lang="less">
   .container {
     width: 100%;
-    background-image: url('../assets/footer/bg.png');
-    background-size: 100% 100%;
+    .main {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 30%;
+      .bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: -1;
+      }
+      .content {
+        width: 1100px;
+        margin: 0 auto;
+        .logo {
+          width: 70px;
+          object-fit: contain;
+          margin: 40px 0 30px 0;
+          @media screen and (min-width: 1440px) {
+            margin: 80px 0 50px 0;
+          }
+        }
+        .list {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          row-gap: 12px;
+          .item {
+            background: rgba(0, 0, 0, 0.6);
+            color: #eee;
+            width: fit-content;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            img {
+              width: 20px;
+              margin-right: 8px;
+            }
+            &:hover {
+              background: rgba(0, 0, 0, 0.8);
+              color: #fff;
+            }
+          }
+        }
+        .plist {
+          grid-template-columns: repeat(3, 1fr);
+          .item {
+            cursor: text;
+          }
+        }
+        .title {
+          background: rgba(0, 0, 0, 0.6);
+          font-size: 17px;
+          width: fit-content;
+          color: #fff;
+          margin: 24px 0;
+          padding: 10px 16px;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          img {
+            width: 30px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+    .copyright {
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+      a {
+        color: #fff;
+
+      }
+    }
   }
   </style>
