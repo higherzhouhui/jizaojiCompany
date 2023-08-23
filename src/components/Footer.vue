@@ -26,7 +26,7 @@
           <a href="https://beian.miit.gov.cn/" target="_blank">
             渝ICP备2022006347号-1
           </a>
-      </div>
+        </div>
     </div>
   </template>
   

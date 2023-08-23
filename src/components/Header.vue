@@ -14,8 +14,9 @@
           v-for="item in routesConfig"
           :key="item.path"
           :index="item.path"
-          >{{ item.name }}</el-menu-item
-        >
+          >
+          {{ item.name }}
+        </el-menu-item>
         <!-- <el-submenu index="2">
         <template slot="title">我的工作台</template>
         <el-menu-item index="2-1">选项1</el-menu-item>
