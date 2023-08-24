@@ -136,15 +136,15 @@
 </template>
 
 <script>
-import c1 from "@/assets/home/c1.png"
-import c2 from "@/assets/home/c2.png"
-import c4 from "@/assets/home/c4.png"
-import c5 from "@/assets/home/c5.png"
-import c7 from "@/assets/home/c7.png"
+import c1 from '@/assets/home/c1.png'
+import c2 from '@/assets/home/c2.png'
+import c4 from '@/assets/home/c4.png'
+import c5 from '@/assets/home/c5.png'
+import c7 from '@/assets/home/c7.png'
 
 export default {
-  name: "Home",
-  data() {
+  name: 'Home',
+  data () {
     return {
       carousel: [c1, c2, c4, c5, c7],
       activeName: 'first',
@@ -154,40 +154,40 @@ export default {
         {logo: require('@/assets/home/wx.png'), title: '微信平台开发', detail: '基于微信公众平台订阅号/服务号的二次开发，预约下单、会员管理、物业服务、就医挂号、微信收款等全功能开发'},
         {logo: require('@/assets/home/sc.png'), title: '商城系统开发', detail: '基于APP、H5、公众号或小程序的零售商城、分销商城、积分商城、拼团商城等各类商城定制开发，把您的生意搬到互联网上来'},
         {logo: require('@/assets/home/gl.png'), title: '管理系统开发', detail: '智慧群宴、智慧工厂、CRM、OA、ERP等政府和企业数字化建设，丰富的系统开发经验积累，让我们成为您可靠的信息技术部'},
-        {logo: require('@/assets/home/it.png'), title: 'IT信息技术服务', detail: '研发人手不够，技术人员招聘难，技术水平参差不齐，产品长期维护难，专业IT信息技术服务，让您省时省力，省钱省心'},
+        {logo: require('@/assets/home/it.png'), title: 'IT信息技术服务', detail: '研发人手不够，技术人员招聘难，技术水平参差不齐，产品长期维护难，专业IT信息技术服务，让您省时省力，省钱省心'}
       ],
       xcxList: [
         {cover: require('@/assets/home/xcx1.png'), mcover: require('@/assets/home/xcx1active.png'), title: '生物城信息通'},
         {cover: require('@/assets/home/xcx2.png'), mcover: require('@/assets/home/xcx2active.png'), title: '“麦李”平台'},
         {cover: require('@/assets/home/xcx3.png'), mcover: require('@/assets/home/xcx3active.png'), title: '智慧麦客'},
-        {cover: require('@/assets/home/xcx4.png'), mcover: require('@/assets/home/xcx4active.png'), title: '茜于海的婚礼'},
+        {cover: require('@/assets/home/xcx4.png'), mcover: require('@/assets/home/xcx4active.png'), title: '茜于海的婚礼'}
       ],
       gzList: [
         {cover: require('@/assets/home/gzh1.png'), mcover: require('@/assets/home/gzh1active.png'), title: '中国好演员2020年'},
         {cover: require('@/assets/home/gzh2.png'), mcover: require('@/assets/home/gzh2active.png'), title: '熊猫带你游'},
         {cover: require('@/assets/home/gzh3.png'), mcover: require('@/assets/home/gzh3active.png'), title: '蜜蜂接单'},
-        {cover: require('@/assets/home/gzh4.png'), mcover: require('@/assets/home/gzh4active.png'), title: '中国好演员2019'},
+        {cover: require('@/assets/home/gzh4.png'), mcover: require('@/assets/home/gzh4active.png'), title: '中国好演员2019'}
       ],
       appList: [
         {cover: require('@/assets/home/app1.png'), title: '巴适公交APP', desc: '《巴适公交》是一款基于成都本地“实时公交查询”移动客户端，系成都公交集团官方移动应用。 《巴适公交》提供成都市内周边公交站台导航、公交换乘方式推荐、车辆实时位置查询'},
         {cover: require('@/assets/home/app2.png'), title: '移动OA', desc: '《移动OA》是成都工业投资集团有限公司打造的“移动互联网+办公”的内部管理运营手机APP，通过移动互联网模式下的轻办公、云办公'},
         {cover: require('@/assets/home/app3.png'), title: '零售电商APP', desc: '为了提高消费者购物的体验，市场上发展快速送达业务的平台也逐渐增多了，从运营商品转向“运营人”，从追求商品销售的规模转向提供极致的产品与服务体验上'},
-        {cover: require('@/assets/home/app4.png'), title: '田螺阿姨APP', desc: '《田螺阿姨》预约保洁阿姨上门服务家政app，还在担心不知道线下在哪儿找阿姨靠谱？还在担心预约的阿姨不能准时过来？还在担心保洁工具不齐全？'},
+        {cover: require('@/assets/home/app4.png'), title: '田螺阿姨APP', desc: '《田螺阿姨》预约保洁阿姨上门服务家政app，还在担心不知道线下在哪儿找阿姨靠谱？还在担心预约的阿姨不能准时过来？还在担心保洁工具不齐全？'}
       ],
       glList: [
         {cover: require('@/assets/home/gl1.png'), title: '麦李商城管理后台', desc: '类似“美团”本地生活服务、外卖、电商一站式SaaS服务平台——“麦李”商城平台管理系统，由用户端小程序、商家端/核销员端小程序、外卖配送员APP端、本地生活服务/外卖/物流商家PC端'},
         {cover: require('@/assets/home/gl2.png'), title: '遂宁市乡村群宴智慧管理', desc: '“互联网+农村群宴”数字化食安监管云平台——“遂宁市乡村群宴智慧管理SaaS平台”，由“成都奇微科技”携手“龙微数字科技”联合“遂宁市乡村厨师协会”打造，由APP、小程序、公众号、H5、WEB端、可视化平'},
         {cover: require('@/assets/home/gl3.png'), title: '密封微信辅助注册任务', desc: '类似“码帮平台/FZ辅助/码力平台/闪电接单/蜻蜓辅助/雏菊辅助”，第三方微信辅助注册任务管理平台——“蜜蜂”任务平台管理系统，帮助有大量微信注册需求的商家和想要0元投入月入过万的兼职'},
-        {cover: require('@/assets/home/gl4.png'), title: 'ETC发行/客户服务综合', desc: '“数字化智能交通服务平台”——四川省ETC发行/客户服务综合管理平台，由APP、小程序、公众号、H5、WEB端、可视化平台、大数据平台等架构而成，依托于大数据、AI、物联网（IOT）、5G'},
-      ],
-    };
+        {cover: require('@/assets/home/gl4.png'), title: 'ETC发行/客户服务综合', desc: '“数字化智能交通服务平台”——四川省ETC发行/客户服务综合管理平台，由APP、小程序、公众号、H5、WEB端、可视化平台、大数据平台等架构而成，依托于大数据、AI、物联网（IOT）、5G'}
+      ]
+    }
   },
   methods: {
-    handleClick() {
-      
+    handleClick () {
+
     }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="appContainer" class="app">
     <Header />
     <main>
       <router-view/>
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-#app {
+#appContainer {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
