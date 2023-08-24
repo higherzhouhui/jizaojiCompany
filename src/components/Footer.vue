@@ -70,7 +70,7 @@
         width: 1100px;
         margin: 0 auto;
         .logo {
-          width: 70px;
+          height: 60px;
           object-fit: contain;
           margin: 40px 0 30px 0;
           @media screen and (min-width: 1440px) {
