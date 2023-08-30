@@ -29,7 +29,7 @@ export default {
         {title: '精选案例', link: '/'},
         {title: 'APP开发', link: '/'},
         {title: '微信开发', link: '/'},
-        {title: '微信系统开发', link: '/'},
+        {title: '系统开发', link: '/'},
         {title: '关于我们', link: '/'}
       ]
     }
