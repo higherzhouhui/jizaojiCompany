@@ -24,7 +24,7 @@
         <div class="copyright">
           Copyright © 2021 - 2023 版权所有©重庆极造极信息科技有限公司 |
           <a href="https://beian.miit.gov.cn/" target="_blank">
-            渝ICP备2022006347号-1
+            渝ICP备2023007595号-2
           </a>
         </div>
     </div>
