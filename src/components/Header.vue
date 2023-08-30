@@ -1,39 +1,18 @@
 <template>
   <div class="container">
     <div class="content">
-      <el-menu
-        default-active="home"
-        class="el-menu-demo"
-        mode="horizontal"
-        @select="handleSelect"
-        background-color="#545c64"
-        text-color="#fff"
-        active-text-color="#ffd04b"
-      >
-        <el-menu-item
-          v-for="item in routesConfig"
-          :key="item.path"
-          :index="item.path"
-          >
-          {{ item.name }}
-        </el-menu-item>
-        <!-- <el-submenu index="2">
-        <template slot="title">我的工作台</template>
-        <el-menu-item index="2-1">选项1</el-menu-item>
-        <el-menu-item index="2-2">选项2</el-menu-item>
-        <el-menu-item index="2-3">选项3</el-menu-item>
-        <el-submenu index="2-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="2-4-1">选项1</el-menu-item>
-          <el-menu-item index="2-4-2">选项2</el-menu-item>
-          <el-menu-item index="2-4-3">选项3</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-menu-item index="3" disabled>消息中心</el-menu-item>
-      <el-menu-item index="4"
-        ><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item
-      > -->
-      </el-menu>
+      <img src="@/assets/logo.png" class="logo" />
+      <div class="menu">
+        <div class="item" v-for="item in menuList" :key="item.title">
+          <a :href="item.link">
+            {{ item.title }}
+          </a>
+        </div>
+      </div>
+      <div class="contact">
+        <img src="@/assets/phone.png" class="phone" />
+        <span>18516010812</span>
+      </div>
     </div>
   </div>
 </template>
@@ -44,7 +23,15 @@ export default {
   name: 'Header',
   data () {
     return {
-      routesConfig: routesConfig
+      routesConfig: routesConfig,
+      menuList: [
+        {title: '首页', link: '/'},
+        {title: '精选案例', link: '/'},
+        {title: 'APP开发', link: '/'},
+        {title: '微信开发', link: '/'},
+        {title: '微信系统开发', link: '/'},
+        {title: '关于我们', link: '/'}
+      ]
     }
   },
   methods: {
@@ -59,13 +46,56 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 .container {
-  background-color: #545c64;
+  height: 60px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  &:hover {
+    background: #333;
+  }
+  .logo {
+    height: 50px;
+  }
   .el-menu-demo {
     border: none;
   }
   .content {
-    width: 1200px;
+    width: 1100px;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    .menu {
+      display: flex;
+      align-items: center;
+      .item {
+        a {
+          color: #fff;
+          text-decoration: none;
+          margin-right: 32px;
+          &:hover {
+            color: #078651;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .contact {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      .phone {
+        height: 25px;
+      }
+      span {
+        margin-left: 8px;
+        line-height: 25px;
+      }
+    }
   }
 }
 </style>

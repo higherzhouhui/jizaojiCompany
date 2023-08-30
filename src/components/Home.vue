@@ -131,6 +131,32 @@
         <div class="title">为什么选择我们？</div>
         <div class="desc">丰富经验，高效研发，优质服务，阿里云安全保障，超100家政企客户的共同选择</div>
       </div>
+      <div class="chooseContainer">
+        <div class="item" v-for="item in chooseList" :key="item.title">
+          <img :src="item.logo" class="clogo" />
+          <img :src="item.logoactive" class="clogoactive" />
+          <div class="divider" />
+          <div class="title">{{ item.title }}</div>
+          <div class="desc">{{ item.desc  }}</div>
+        </div>
+      </div>
+
+      <div class="serviceContainer">
+        <div class="title">开发服务流程</div>
+        <div class="desc">严格把控开发质量，敏捷项目研发流程，运筹帷幄，决胜千里</div>
+      </div>
+      <div class="developContainer">
+        <img src="@/assets/home/develop.png" class="developImg" />
+      </div>
+      <div class="serviceContainer">
+        <div class="title">长期合伙客户</div>
+        <div class="desc">为客户创造价值，思客户所想，是相互认可、信赖选择的前提</div>
+      </div>
+      <div class="companyContainer">
+        <div class="item" v-for="item in companyList" :key="item.logo">
+          <img :src="item.logo" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -179,6 +205,24 @@ export default {
         {cover: require('@/assets/home/gl2.png'), title: '遂宁市乡村群宴智慧管理', desc: '“互联网+农村群宴”数字化食安监管云平台——“遂宁市乡村群宴智慧管理SaaS平台”，由“成都奇微科技”携手“龙微数字科技”联合“遂宁市乡村厨师协会”打造，由APP、小程序、公众号、H5、WEB端、可视化平'},
         {cover: require('@/assets/home/gl3.png'), title: '密封微信辅助注册任务', desc: '类似“码帮平台/FZ辅助/码力平台/闪电接单/蜻蜓辅助/雏菊辅助”，第三方微信辅助注册任务管理平台——“蜜蜂”任务平台管理系统，帮助有大量微信注册需求的商家和想要0元投入月入过万的兼职'},
         {cover: require('@/assets/home/gl4.png'), title: 'ETC发行/客户服务综合', desc: '“数字化智能交通服务平台”——四川省ETC发行/客户服务综合管理平台，由APP、小程序、公众号、H5、WEB端、可视化平台、大数据平台等架构而成，依托于大数据、AI、物联网（IOT）、5G'}
+      ],
+      chooseList: [
+        {logo: require('@/assets/home/choose1.png'), logoactive: require('@/assets/home/choose1active.png'), title: '丰富的开发经验', desc: '1000+政企客户的信赖选择，1000+数字化产品案例的积累，10万+微信接口次数调用的经验。'},
+        {logo: require('@/assets/home/choose2.png'), logoactive: require('@/assets/home/choose2active.png'), title: '优质的客户服务', desc: '优质的客户服务售前，售中，售后的优质客户服务，为您提供1小时内的技术响应，7x24小时的技术咨询。'},
+        {logo: require('@/assets/home/choose3.png'), logoactive: require('@/assets/home/choose3active.png'), title: '高效的研发能力', desc: '新浪、凡客、巴适公交团队的核心研发人员，资深的技术实力，高效的Scrum敏捷研发流程保证。'},
+        {logo: require('@/assets/home/choose4.png'), logoactive: require('@/assets/home/choose4active.png'), title: '阿里云安全保障', desc: '国内绝对行业第一的阿里云服务器保障，安全，高速，稳定，防攻击，防丢失，多备份。'}
+      ],
+      companyList: [
+        {logo: require('@/assets/home/company10.png')},
+        {logo: require('@/assets/home/company5.png')},
+        {logo: require('@/assets/home/company6.png')},
+        {logo: require('@/assets/home/company7.png')},
+        {logo: require('@/assets/home/company8.png')},
+        {logo: require('@/assets/home/company1.png')},
+        {logo: require('@/assets/home/company2.png')},
+        {logo: require('@/assets/home/company4.png')},
+        {logo: require('@/assets/home/company9.png')},
+        {logo: require('@/assets/home/company3.png')}
       ]
     }
   },
@@ -406,6 +450,93 @@ export default {
       letter-spacing: 4px;
       opacity: 0.8;
     }
+  }
+}
+.chooseContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #fff;
+  margin-bottom: 32px;
+  .item {
+    border-right: 1px solid #f5f5f5;
+    padding: 24px 12px;
+    text-align: center;
+    transition: all 0.3s;
+    .clogoactive {
+      display: none;
+    }
+    &:hover {
+      background: #078651;
+      transform: scale(1.04);
+      .clogoactive {
+        display: inline-block;
+      }
+      .divider {
+        background: #fff;
+      }
+      .clogo {
+        display: none;
+      }
+      .title {
+        color: #fff;
+      }
+      .desc {
+        color: #f5f5f5;
+      }
+    }
+    .divider {
+      width: 32px;
+      height: 4px;
+      background: #078651;
+      margin: 32px auto;
+    }
+    .title {
+      font-size: 17px;
+      font-weight: bold;
+      margin: 12px 0;
+    }
+    .desc {
+      font-size: 15px;
+      color: #333;
+      line-height: 21px;
+    }
+  }
+  .item:last-child {
+    border-right: none;
+  }
+}
+.developContainer {
+  margin-bottom: 32px;
+  background: rgba(255, 255, 255, 0.6);
+  img {
+    width: 100%;
+  }
+}
+
+.companyContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 32px;
+  border-bottom: 1px solid #f5f5f5;
+  .item {
+    border-top: 1px solid #f5f5f5;
+    border-right: 1px solid #f5f5f5;
+    transition: all 0.2s;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.05);
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+  }
+  .item:first-child {
+    border-left: 1px solid #f5f5f5;
+  }
+  .item:nth-child(6) {
+    border-left: 1px solid #f5f5f5;
   }
 }
 /deep/ .el-carousel__container {
