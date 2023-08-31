@@ -158,6 +158,30 @@
         </div>
       </div>
     </div>
+    <div class="dividerBg helpBg">
+      <div class="dcontent">
+        <h2>马上行动，助力您的政府和企业简单快速数字化</h2>
+        <h1>立即咨询</h1>
+        <div class="zz">
+          <div class="item">
+            <img src="@/assets/home/gxqy.png" class="zzlogo"/>
+            <span>国家高新技术企业</span>
+          </div>
+          <div class="item">
+            <img src="@/assets/home/srqy.png" class="zzlogo"/>
+            <span>国家双软认证企业</span>
+          </div>
+          <div class="item">
+            <img src="@/assets/home/kj.png" class="zzlogo"/>
+            <span>国家科技型中小企业</span>
+          </div>
+          <div class="item">
+            <img src="@/assets/home/cx.png" class="zzlogo"/>
+            <span>国家创新型中小企业</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -449,6 +473,27 @@ export default {
       font-size: 16px;
       letter-spacing: 4px;
       opacity: 0.8;
+    }
+  }
+}
+.helpBg {
+  background-image: url('../assets/home/helpbg.png');
+  margin-bottom: 0;
+  .dcontent {
+    height: 214px;
+    .zz {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      width: 100%;
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .zzlogo {
+          height: 46px;
+          margin-right: 22px;
+        }
+      }
     }
   }
 }
