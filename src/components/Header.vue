@@ -69,6 +69,12 @@ export default {
     align-items: center;
     justify-content: space-around;
     height: 100%;
+    @media screen and (max-width: 1100px) {
+      width: 100%;
+      .menu {
+        display: none!important;
+      }
+    }
     .menu {
       display: flex;
       align-items: center;

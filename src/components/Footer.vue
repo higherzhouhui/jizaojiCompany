@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="copyright">
-          Copyright © 2021 - 2023 版权所有©重庆极造极信息科技有限公司 |
+          <span>Copyright © 2021 - 2023 版权所有©重庆极造极信息科技有限公司 |</span>
           <a href="https://beian.miit.gov.cn/" target="_blank">
             渝ICP备2023007595号-2
           </a>
@@ -69,6 +69,9 @@ export default {
       .content {
         width: 1100px;
         margin: 0 auto;
+        @media screen and (max-width: 1100px) {
+          display: none;
+        }
         .logo {
           height: 60px;
           object-fit: contain;
@@ -130,6 +133,14 @@ export default {
       align-items: center;
       justify-content: center;
       height: 32px;
+      @media screen and (max-width: 1100px) {
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        a {
+          font-size: 12px;
+        }
+      }
       a {
         color: #fff;
 

@@ -261,6 +261,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 .container {
+  @media screen and (max-width: 1100px) {
+    margin-top: 60px;
+  }
   .carousel {
     .imgWrapper {
       width: 100%;
@@ -287,6 +290,15 @@ export default {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       padding: 12px 0;
+      @media screen and (max-width: 1100px) {
+        width: 100%;
+        .top {
+          font-size: 14px!important;
+        }
+        .bot {
+          font-size: 12px!important;
+        }
+      }
       .item {
         text-align: center;
         border-right: 2px dotted #3d95a3;
@@ -308,6 +320,22 @@ export default {
   .main {
     margin: 0 auto;
     width: 1100px;
+    @media screen and (max-width: 1100px) {
+      width: 100%;
+      padding: 0 12px;
+      box-sizing: border-box;
+      .serviceContainer {
+        margin: 12px 0!important;
+        .title {
+          font-size: 16px!important;
+          line-height: 24px!important;
+        }
+        .desc {
+          font-size: 13px!important;
+          line-height: 21px!important;
+        }
+      }
+    }
     .serviceContainer {
       margin: 34px 0;
       text-align: center;
@@ -329,6 +357,9 @@ export default {
       grid-template-columns: repeat(3, 1fr);
       column-gap: 18px;
       row-gap: 18px;
+      @media screen and (max-width: 1100px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
       .item {
         text-align: center;
         padding: 18px 12px;
@@ -374,7 +405,10 @@ export default {
     .tabContent {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      column-gap: 18px;
+      row-gap: 18px;
+      @media screen and (max-width: 1100px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
       .item {
         position: relative;
         .cover {
@@ -474,6 +508,19 @@ export default {
       letter-spacing: 4px;
       opacity: 0.8;
     }
+    @media screen and (max-width: 1100px) {
+      height: 250px;
+      padding: 0 12px;
+      h1 {
+        font-size: 19px;
+      }
+      h2 {
+        font-size: 17px;
+      }
+      h3 {
+        font-size: 14px;
+      }
+    }
   }
 }
 .helpBg {
@@ -485,6 +532,17 @@ export default {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       width: 100%;
+      @media screen and (max-width: 1100px) {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 12px;
+        .zzlogo {
+          height: 30px!important;
+          margin-right: 6px!important;
+        }
+        span {
+          font-size: 12px!important;
+        }
+      }
       .item {
         display: flex;
         align-items: center;
@@ -500,13 +558,18 @@ export default {
 .chooseContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  background: #fff;
+  background: #f5f5f5;
   margin-bottom: 32px;
+  row-gap: 18px;
+  @media screen and (max-width: 1100px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
   .item {
     border-right: 1px solid #f5f5f5;
     padding: 24px 12px;
     text-align: center;
     transition: all 0.3s;
+    background: #fff;
     .clogoactive {
       display: none;
     }
