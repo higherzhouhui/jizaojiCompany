@@ -418,6 +418,7 @@ export default {
         }
         .top {
           position: relative;
+          overflow: hidden;
           &:hover {
             .mask {
               bottom: 0;
