@@ -11,5 +11,20 @@
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script>
+      /**
+        * 基础禁止调试代码
+      */
+        (() => {
+          function ban() {
+            setInterval(() => {
+              debugger;
+            }, 50);
+          }
+          try {
+            ban();
+          } catch (err) { }
+        })();
+    </script>
   </body>
 </html>
