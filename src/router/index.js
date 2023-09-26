@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
+import Abount from '@/components/Abount'
 
 Vue.use(Router)
 
@@ -11,9 +12,9 @@ export const routesConfig = [
     component: Home
   },
   {
-    path: '/aboutUs',
+    path: '/about',
     name: '关于我们',
-    component: Home
+    component: Abount
   }
 ]
 

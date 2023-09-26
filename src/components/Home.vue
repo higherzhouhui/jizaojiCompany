@@ -31,7 +31,7 @@
     </div>
     <div class="main">
       <div class="serviceContainer">
-        <div class="title">我们将为您提供的服务</div>
+        <a name="develop" class="title">我们将为您提供的服务</a>
         <div class="desc">成立以来，我们只专注一件事，“互联网软件开发及IT服务”，已助力100+政府和企业数字化转型升级</div>
       </div>
       <div class="productList">
@@ -42,10 +42,10 @@
           <button>立即咨询</button>
         </div>
       </div>
-      <div class="serviceContainer">
+      <a class="serviceContainer" name="anli">
         <div class="title">客户精选案例</div>
         <div class="desc">我们为乌镇微医、蓝光地产、成都电视台、遂宁市市场监督管理局等100+政府和企业，提供了不同行业的数字化产品开发</div>
-      </div>
+      </a>
       <el-tabs v-model="activeName" @tab-click="handleClick" class="tabTitle">
         <el-tab-pane label="小程序" name="first">
           <div class="tabContent">
@@ -231,7 +231,7 @@ export default {
         {cover: require('@/assets/home/gl4.png'), title: 'ETC发行/客户服务综合', desc: '“数字化智能交通服务平台”——四川省ETC发行/客户服务综合管理平台，由APP、小程序、公众号、H5、WEB端、可视化平台、大数据平台等架构而成，依托于大数据、AI、物联网（IOT）、5G'}
       ],
       chooseList: [
-        {logo: require('@/assets/home/choose1.png'), logoactive: require('@/assets/home/choose1active.png'), title: '丰富的开发经验', desc: '1000+政企客户的信赖选择，1000+数字化产品案例的积累，10万+微信接口次数调用的经验。'},
+        {logo: require('@/assets/home/choose1.png'), logoactive: require('@/assets/home/choose1active.png'), title: '丰富的开发经验', desc: '100+政企客户的信赖选择，1000+数字化产品案例的积累，10万+微信接口次数调用的经验。'},
         {logo: require('@/assets/home/choose2.png'), logoactive: require('@/assets/home/choose2active.png'), title: '优质的客户服务', desc: '优质的客户服务售前，售中，售后的优质客户服务，为您提供1小时内的技术响应，7x24小时的技术咨询。'},
         {logo: require('@/assets/home/choose3.png'), logoactive: require('@/assets/home/choose3active.png'), title: '高效的研发能力', desc: '新浪、凡客、巴适公交团队的核心研发人员，资深的技术实力，高效的Scrum敏捷研发流程保证。'},
         {logo: require('@/assets/home/choose4.png'), logoactive: require('@/assets/home/choose4active.png'), title: '阿里云安全保障', desc: '国内绝对行业第一的阿里云服务器保障，安全，高速，稳定，防攻击，防丢失，多备份。'}
@@ -337,13 +337,28 @@ export default {
       }
     }
     .serviceContainer {
-      margin: 34px 0;
+      margin: 36px 0;
       text-align: center;
+      display: block;
+
       .title {
         font-size: 30px;
         color: #333;
         text-align: center;
         line-height: 60px;
+        position: relative;
+        display: block;
+      }
+      .title::after {
+        content: '';
+        width: 32px;
+        height: 3px;
+        background: #10c02e;
+        display: block;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, -50%);
       }
       .desc {
         color: #999999;
@@ -406,6 +421,8 @@ export default {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       row-gap: 18px;
+      column-gap: 2px;
+      background: #333;
       @media screen and (max-width: 1100px) {
         grid-template-columns: repeat(1, 1fr);
       }
@@ -455,11 +472,12 @@ export default {
           }
         }
         .bot {
-          background: rgba(0, 0, 0, 0.1);
+          background: rgba(255, 255, 255, 0.2);
           text-align: center;
           font-weight: bold;
           line-height: 32px;
           font-size: 16px;
+          color: #fff;
         }
       }
       .title {

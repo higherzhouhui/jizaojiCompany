@@ -11,7 +11,7 @@
       </div>
       <div class="contact">
         <img src="@/assets/phone.png" class="phone" />
-        <span>18516010812</span>
+        <span>185-1601-0812</span>
       </div>
     </div>
   </div>
@@ -26,11 +26,11 @@ export default {
       routesConfig: routesConfig,
       menuList: [
         {title: '首页', link: '/'},
-        {title: '精选案例', link: '/'},
-        {title: 'APP开发', link: '/'},
-        {title: '微信开发', link: '/'},
-        {title: '系统开发', link: '/'},
-        {title: '关于我们', link: '/'}
+        {title: '精选案例', link: '#anli'},
+        {title: 'APP开发', link: '#develop'},
+        {title: '微信开发', link: '#develop'},
+        {title: '系统开发', link: '#develop'},
+        {title: '关于我们', link: '/about'}
       ]
     }
   },
@@ -86,6 +86,8 @@ export default {
           &:hover {
             color: #078651;
             font-weight: bold;
+            cursor: pointer!important;
+
           }
         }
       }
@@ -98,8 +100,10 @@ export default {
         height: 25px;
       }
       span {
+        font-size: 18px;
         margin-left: 8px;
         line-height: 25px;
+        font-weight: bold;
       }
     }
   }
