@@ -186,17 +186,19 @@
 </template>
 
 <script>
+import b1 from '@/assets/home/b1.png'
+import b2 from '@/assets/home/b2.png'
+import b3 from '@/assets/home/b3.png'
+import b4 from '@/assets/home/b4.png'
 import c1 from '@/assets/home/c1.png'
 import c2 from '@/assets/home/c2.png'
-import c4 from '@/assets/home/c4.png'
 import c5 from '@/assets/home/c5.png'
-import c7 from '@/assets/home/c7.png'
 
 export default {
   name: 'Home',
   data () {
     return {
-      carousel: [c1, c2, c4, c5, c7],
+      carousel: [b1, b2, b3, b4, c1, c2, c5],
       activeName: 'first',
       productList: [
         {logo: require('@/assets/home/app.png'), title: '手机APP定制开发', detail: 'IOS/Android系统手机APP的全功能原生定制开发，打造极致客户体验，覆盖多种智能终端，便于品牌宣传和产品展示'},
