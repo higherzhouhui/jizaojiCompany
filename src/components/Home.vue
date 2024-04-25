@@ -11,9 +11,7 @@
     </div>
     <div
       class="infull animate__animated"
-      :class="
-        isVisible.f0 ? 'animate__zoomIn animate__fadeIn' : 'animate__fadeOut'
-      "
+      :class="isVisible.f0 ? 'animate__zoomIn' : 'animate__zoomOut'"
     >
       <div class="introduce">
         <div class="item">
@@ -37,9 +35,7 @@
     <div class="main">
       <div
         class="serviceContainer animate__animated"
-        :class="
-          isVisible.f1 ? 'animate__bounce animate__fadeIn' : 'animate__fadeOut'
-        "
+        :class="isVisible.f1 ? 'animate__backInLeft' : 'animate__backOutLeft'"
       >
         <a name="develop" class="title">我们将为您提供的服务</a>
         <div class="desc">
@@ -53,8 +49,8 @@
           :key="item.title"
           :class="
             isVisible[`f${index + 2}`]
-              ? 'animate__fadeIn animate__pulse'
-              : 'animate__fadeOut'
+              ? 'animate__bounceIn '
+              : 'animate__bounceOut'
           "
         >
           <img :src="item.logo" />
@@ -63,20 +59,17 @@
           <button>立即咨询</button>
         </div>
       </div>
-      <a class="serviceContainer" name="anli">
+      <a
+        class="serviceContainer animate__animated"
+        :class="isVisible.f8 ? 'animate__fadeInRight' : 'animate__fadeOutRight'"
+        name="anli"
+      >
         <div class="title">客户精选案例</div>
         <div class="desc">
           我们为乌镇微医、蓝光地产、成都电视台、遂宁市市场监督管理局等100+政府和企业，提供了不同行业的数字化产品开发
         </div>
       </a>
-      <el-tabs
-        v-model="activeName"
-        @tab-click="handleClick"
-        class="tabTitle animate__animated"
-        :class="
-          isVisible.f8 ? 'animate__fadeIn animate__pulse' : 'animate__fadeOut'
-        "
-      >
+      <el-tabs v-model="activeName" @tab-click="handleClick" class="tabTitle">
         <el-tab-pane label="小程序" name="first">
           <div class="tabContent">
             <div class="item" v-for="item in xcxList" :key="item.cover">
@@ -151,7 +144,7 @@
     </div>
     <div
       class="dividerBg animate__animated"
-      :class="isVisible.f9 && 'animate__bounceIn'"
+      :class="isVisible.f9 ? 'animate__bounceIn' : 'animate__bounceOut'"
     >
       <div class="dcontent">
         <h2>
@@ -172,9 +165,7 @@
         <div
           class="item animate__animated"
           :class="
-            isVisible[`f${10 + index}`]
-              ? 'animate__zoomIn animate__fadeIn'
-              : 'animate__fadeOut'
+            isVisible[`f${10 + index}`] ? 'animate__zoomIn' : 'animate__zoomOut'
           "
           v-for="(item, index) in chooseList"
           :key="item.title"
@@ -190,7 +181,7 @@
       <div
         class="serviceContainer animate__animated"
         :class="
-          isVisible.f14 ? 'animate__zoomIn animate__fadeIn' : 'animate__fadeOut'
+          isVisible.f14 ? 'animate__fadeInRight' : 'animate__fadeOutRight'
         "
       >
         <div class="title">开发服务流程</div>
@@ -202,8 +193,8 @@
         class="developContainer animate__animated"
         :class="
           isVisible.f15
-            ? 'animate__fadeInUp animate__fadeIn'
-            : 'animate__fadeOut'
+            ? 'animate__fadeInBottomLeft'
+            : 'animate__fadeOutBottomRight'
         "
       >
         <img src="@/assets/home/develop.png" class="developImg" />
@@ -216,11 +207,7 @@
       </div>
       <div
         class="companyContainer  animate__animated"
-        :class="
-          isVisible.f16
-            ? 'animate__fadeInUp animate__fadeIn'
-            : 'animate__fadeOut'
-        "
+        :class="isVisible.f16 ? 'animate__fadeInLeft' : 'animate__fadeOutLeft'"
       >
         <div class="item" v-for="item in companyList" :key="item.logo">
           <img :src="item.logo" />
@@ -484,12 +471,7 @@ export default {
         var viewportHeight =
           window.innerHeight || document.documentElement.clientHeight;
 
-        return (
-          rect.top >= 0 &&
-          rect.left >= 0 &&
-          rect.bottom <= viewportHeight &&
-          rect.right <= viewportWidth
-        );
+        return rect.top >= 0 && rect.bottom <= viewportHeight;
       };
       for (let i = 0; i < list.length; i++) {
         if (judgeIsView(list[i])) {
@@ -498,6 +480,7 @@ export default {
           this.isVisible[`f${i}`] = false;
         }
       }
+      console.log(this.isVisible);
     },
     debounce(fn, delay) {
       // 记录上一次的延时器
