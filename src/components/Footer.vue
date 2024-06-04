@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="copyright">
-      <span>Copyright © 2021 - 2023 版权所有©重庆极造极信息科技有限公司 |</span>
+      <span>Copyright © 2021 - 2052 版权所有©重庆极造极信息科技有限公司 |</span>
       <a href="https://beian.miit.gov.cn/" target="_blank">
         渝ICP备2023007595号-2 |
       </a>
