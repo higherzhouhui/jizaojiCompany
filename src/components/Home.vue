@@ -242,195 +242,195 @@
 </template>
 
 <script>
-import b1 from "@/assets/home/b1.png";
-import b2 from "@/assets/home/b2.png";
-import b3 from "@/assets/home/b3.png";
-import b4 from "@/assets/home/b4.png";
-import c1 from "@/assets/home/c1.png";
-import c2 from "@/assets/home/c2.png";
-import c5 from "@/assets/home/c5.png";
+import b1 from '@/assets/home/b1.png'
+import b2 from '@/assets/home/b2.png'
+import b3 from '@/assets/home/b3.png'
+import b4 from '@/assets/home/b4.png'
+import c1 from '@/assets/home/c1.png'
+import c2 from '@/assets/home/c2.png'
+import c5 from '@/assets/home/c5.png'
 
 export default {
-  name: "Home",
-  data() {
+  name: 'Home',
+  data () {
     return {
       carousel: [b1, b2, b3, b4, c1, c2, c5],
-      activeName: "first",
+      activeName: 'first',
       productList: [
         {
-          logo: require("@/assets/home/app.png"),
-          title: "手机APP定制开发",
+          logo: require('@/assets/home/app.png'),
+          title: '手机APP定制开发',
           detail:
-            "IOS/Android系统手机APP的全功能原生定制开发，打造极致客户体验，覆盖多种智能终端，便于品牌宣传和产品展示"
+            'IOS/Android系统手机APP的全功能原生定制开发，打造极致客户体验，覆盖多种智能终端，便于品牌宣传和产品展示'
         },
         {
-          logo: require("@/assets/home/xcx.png"),
-          title: "微信小程序开发",
+          logo: require('@/assets/home/xcx.png'),
+          title: '微信小程序开发',
           detail:
-            "火爆的微信小程序定制开发，商城/拼团/酒店/预约/会员卡小程序等应有尽有，让您的服务直达10亿+微信用户"
+            '火爆的微信小程序定制开发，商城/拼团/酒店/预约/会员卡小程序等应有尽有，让您的服务直达10亿+微信用户'
         },
         {
-          logo: require("@/assets/home/wx.png"),
-          title: "微信平台开发",
+          logo: require('@/assets/home/wx.png'),
+          title: '微信平台开发',
           detail:
-            "基于微信公众平台订阅号/服务号的二次开发，预约下单、会员管理、物业服务、就医挂号、微信收款等全功能开发"
+            '基于微信公众平台订阅号/服务号的二次开发，预约下单、会员管理、物业服务、就医挂号、微信收款等全功能开发'
         },
         {
-          logo: require("@/assets/home/sc.png"),
-          title: "商城系统开发",
+          logo: require('@/assets/home/sc.png'),
+          title: '商城系统开发',
           detail:
-            "基于APP、H5、公众号或小程序的零售商城、分销商城、积分商城、拼团商城等各类商城定制开发，把您的生意搬到互联网上来"
+            '基于APP、H5、公众号或小程序的零售商城、分销商城、积分商城、拼团商城等各类商城定制开发，把您的生意搬到互联网上来'
         },
         {
-          logo: require("@/assets/home/gl.png"),
-          title: "管理系统开发",
+          logo: require('@/assets/home/gl.png'),
+          title: '管理系统开发',
           detail:
-            "智慧群宴、智慧工厂、CRM、OA、ERP等政府和企业数字化建设，丰富的系统开发经验积累，让我们成为您可靠的信息技术部"
+            '智慧群宴、智慧工厂、CRM、OA、ERP等政府和企业数字化建设，丰富的系统开发经验积累，让我们成为您可靠的信息技术部'
         },
         {
-          logo: require("@/assets/home/it.png"),
-          title: "IT信息技术服务",
+          logo: require('@/assets/home/it.png'),
+          title: 'IT信息技术服务',
           detail:
-            "研发人手不够，技术人员招聘难，技术水平参差不齐，产品长期维护难，专业IT信息技术服务，让您省时省力，省钱省心"
+            '研发人手不够，技术人员招聘难，技术水平参差不齐，产品长期维护难，专业IT信息技术服务，让您省时省力，省钱省心'
         }
       ],
       xcxList: [
         {
-          cover: require("@/assets/home/xcx1.png"),
-          mcover: require("@/assets/home/xcx1active.png"),
-          title: "生物城信息通"
+          cover: require('@/assets/home/xcx1.png'),
+          mcover: require('@/assets/home/xcx1active.png'),
+          title: '生物城信息通'
         },
         {
-          cover: require("@/assets/home/xcx2.png"),
-          mcover: require("@/assets/home/xcx2active.png"),
-          title: "“麦李”平台"
+          cover: require('@/assets/home/xcx2.png'),
+          mcover: require('@/assets/home/xcx2active.png'),
+          title: '“麦李”平台'
         },
         {
-          cover: require("@/assets/home/xcx3.png"),
-          mcover: require("@/assets/home/xcx3active.png"),
-          title: "智慧麦客"
+          cover: require('@/assets/home/xcx3.png'),
+          mcover: require('@/assets/home/xcx3active.png'),
+          title: '智慧麦客'
         },
         {
-          cover: require("@/assets/home/xcx4.png"),
-          mcover: require("@/assets/home/xcx4active.png"),
-          title: "茜于海的婚礼"
+          cover: require('@/assets/home/xcx4.png'),
+          mcover: require('@/assets/home/xcx4active.png'),
+          title: '茜于海的婚礼'
         }
       ],
       gzList: [
         {
-          cover: require("@/assets/home/gzh1.png"),
-          mcover: require("@/assets/home/gzh1active.png"),
-          title: "中国好演员2020年"
+          cover: require('@/assets/home/gzh1.png'),
+          mcover: require('@/assets/home/gzh1active.png'),
+          title: '中国好演员2020年'
         },
         {
-          cover: require("@/assets/home/gzh2.png"),
-          mcover: require("@/assets/home/gzh2active.png"),
-          title: "熊猫带你游"
+          cover: require('@/assets/home/gzh2.png'),
+          mcover: require('@/assets/home/gzh2active.png'),
+          title: '熊猫带你游'
         },
         {
-          cover: require("@/assets/home/gzh3.png"),
-          mcover: require("@/assets/home/gzh3active.png"),
-          title: "蜜蜂接单"
+          cover: require('@/assets/home/gzh3.png'),
+          mcover: require('@/assets/home/gzh3active.png'),
+          title: '蜜蜂接单'
         },
         {
-          cover: require("@/assets/home/gzh4.png"),
-          mcover: require("@/assets/home/gzh4active.png"),
-          title: "中国好演员2019"
+          cover: require('@/assets/home/gzh4.png'),
+          mcover: require('@/assets/home/gzh4active.png'),
+          title: '中国好演员2019'
         }
       ],
       appList: [
         {
-          cover: require("@/assets/home/app1.png"),
-          title: "巴适公交APP",
+          cover: require('@/assets/home/app1.png'),
+          title: '巴适公交APP',
           desc:
-            "《巴适公交》是一款基于成都本地“实时公交查询”移动客户端，系成都公交集团官方移动应用。 《巴适公交》提供成都市内周边公交站台导航、公交换乘方式推荐、车辆实时位置查询"
+            '《巴适公交》是一款基于成都本地“实时公交查询”移动客户端，系成都公交集团官方移动应用。 《巴适公交》提供成都市内周边公交站台导航、公交换乘方式推荐、车辆实时位置查询'
         },
         {
-          cover: require("@/assets/home/app2.png"),
-          title: "移动OA",
+          cover: require('@/assets/home/app2.png'),
+          title: '移动OA',
           desc:
-            "《移动OA》是成都工业投资集团有限公司打造的“移动互联网+办公”的内部管理运营手机APP，通过移动互联网模式下的轻办公、云办公"
+            '《移动OA》是成都工业投资集团有限公司打造的“移动互联网+办公”的内部管理运营手机APP，通过移动互联网模式下的轻办公、云办公'
         },
         {
-          cover: require("@/assets/home/app3.png"),
-          title: "零售电商APP",
+          cover: require('@/assets/home/app3.png'),
+          title: '零售电商APP',
           desc:
-            "为了提高消费者购物的体验，市场上发展快速送达业务的平台也逐渐增多了，从运营商品转向“运营人”，从追求商品销售的规模转向提供极致的产品与服务体验上"
+            '为了提高消费者购物的体验，市场上发展快速送达业务的平台也逐渐增多了，从运营商品转向“运营人”，从追求商品销售的规模转向提供极致的产品与服务体验上'
         },
         {
-          cover: require("@/assets/home/app4.png"),
-          title: "田螺阿姨APP",
+          cover: require('@/assets/home/app4.png'),
+          title: '田螺阿姨APP',
           desc:
-            "《田螺阿姨》预约保洁阿姨上门服务家政app，还在担心不知道线下在哪儿找阿姨靠谱？还在担心预约的阿姨不能准时过来？还在担心保洁工具不齐全？"
+            '《田螺阿姨》预约保洁阿姨上门服务家政app，还在担心不知道线下在哪儿找阿姨靠谱？还在担心预约的阿姨不能准时过来？还在担心保洁工具不齐全？'
         }
       ],
       glList: [
         {
-          cover: require("@/assets/home/gl1.png"),
-          title: "麦李商城管理后台",
+          cover: require('@/assets/home/gl1.png'),
+          title: '麦李商城管理后台',
           desc:
-            "类似“美团”本地生活服务、外卖、电商一站式SaaS服务平台——“麦李”商城平台管理系统，由用户端小程序、商家端/核销员端小程序、外卖配送员APP端、本地生活服务/外卖/物流商家PC端"
+            '类似“美团”本地生活服务、外卖、电商一站式SaaS服务平台——“麦李”商城平台管理系统，由用户端小程序、商家端/核销员端小程序、外卖配送员APP端、本地生活服务/外卖/物流商家PC端'
         },
         {
-          cover: require("@/assets/home/gl2.png"),
-          title: "遂宁市乡村群宴智慧管理",
+          cover: require('@/assets/home/gl2.png'),
+          title: '遂宁市乡村群宴智慧管理',
           desc:
-            "“互联网+农村群宴”数字化食安监管云平台——“遂宁市乡村群宴智慧管理SaaS平台”，由“成都奇微科技”携手“龙微数字科技”联合“遂宁市乡村厨师协会”打造，由APP、小程序、公众号、H5、WEB端、可视化平"
+            '“互联网+农村群宴”数字化食安监管云平台——“遂宁市乡村群宴智慧管理SaaS平台”，由“成都奇微科技”携手“龙微数字科技”联合“遂宁市乡村厨师协会”打造，由APP、小程序、公众号、H5、WEB端、可视化平'
         },
         {
-          cover: require("@/assets/home/gl3.png"),
-          title: "密封微信辅助注册任务",
+          cover: require('@/assets/home/gl3.png'),
+          title: '密封微信辅助注册任务',
           desc:
-            "类似“码帮平台/FZ辅助/码力平台/闪电接单/蜻蜓辅助/雏菊辅助”，第三方微信辅助注册任务管理平台——“蜜蜂”任务平台管理系统，帮助有大量微信注册需求的商家和想要0元投入月入过万的兼职"
+            '类似“码帮平台/FZ辅助/码力平台/闪电接单/蜻蜓辅助/雏菊辅助”，第三方微信辅助注册任务管理平台——“蜜蜂”任务平台管理系统，帮助有大量微信注册需求的商家和想要0元投入月入过万的兼职'
         },
         {
-          cover: require("@/assets/home/gl4.png"),
-          title: "ETC发行/客户服务综合",
+          cover: require('@/assets/home/gl4.png'),
+          title: 'ETC发行/客户服务综合',
           desc:
-            "“数字化智能交通服务平台”——四川省ETC发行/客户服务综合管理平台，由APP、小程序、公众号、H5、WEB端、可视化平台、大数据平台等架构而成，依托于大数据、AI、物联网（IOT）、5G"
+            '“数字化智能交通服务平台”——四川省ETC发行/客户服务综合管理平台，由APP、小程序、公众号、H5、WEB端、可视化平台、大数据平台等架构而成，依托于大数据、AI、物联网（IOT）、5G'
         }
       ],
       chooseList: [
         {
-          logo: require("@/assets/home/choose1.png"),
-          logoactive: require("@/assets/home/choose1active.png"),
-          title: "丰富的开发经验",
+          logo: require('@/assets/home/choose1.png'),
+          logoactive: require('@/assets/home/choose1active.png'),
+          title: '丰富的开发经验',
           desc:
-            "100+政企客户的信赖选择，1000+数字化产品案例的积累，10万+微信接口次数调用的经验。"
+            '100+政企客户的信赖选择，1000+数字化产品案例的积累，10万+微信接口次数调用的经验。'
         },
         {
-          logo: require("@/assets/home/choose2.png"),
-          logoactive: require("@/assets/home/choose2active.png"),
-          title: "优质的客户服务",
+          logo: require('@/assets/home/choose2.png'),
+          logoactive: require('@/assets/home/choose2active.png'),
+          title: '优质的客户服务',
           desc:
-            "优质的客户服务售前，售中，售后的优质客户服务，为您提供1小时内的技术响应，7x24小时的技术咨询。"
+            '优质的客户服务售前，售中，售后的优质客户服务，为您提供1小时内的技术响应，7x24小时的技术咨询。'
         },
         {
-          logo: require("@/assets/home/choose3.png"),
-          logoactive: require("@/assets/home/choose3active.png"),
-          title: "高效的研发能力",
+          logo: require('@/assets/home/choose3.png'),
+          logoactive: require('@/assets/home/choose3active.png'),
+          title: '高效的研发能力',
           desc:
-            "新浪、凡客、巴适公交团队的核心研发人员，资深的技术实力，高效的Scrum敏捷研发流程保证。"
+            '新浪、凡客、巴适公交团队的核心研发人员，资深的技术实力，高效的Scrum敏捷研发流程保证。'
         },
         {
-          logo: require("@/assets/home/choose4.png"),
-          logoactive: require("@/assets/home/choose4active.png"),
-          title: "阿里云安全保障",
+          logo: require('@/assets/home/choose4.png'),
+          logoactive: require('@/assets/home/choose4active.png'),
+          title: '阿里云安全保障',
           desc:
-            "国内绝对行业第一的阿里云服务器保障，安全，高速，稳定，防攻击，防丢失，多备份。"
+            '国内绝对行业第一的阿里云服务器保障，安全，高速，稳定，防攻击，防丢失，多备份。'
         }
       ],
       companyList: [
-        { logo: require("@/assets/home/company10.png") },
-        { logo: require("@/assets/home/company5.png") },
-        { logo: require("@/assets/home/company6.png") },
-        { logo: require("@/assets/home/company7.png") },
-        { logo: require("@/assets/home/company8.png") },
-        { logo: require("@/assets/home/company1.png") },
-        { logo: require("@/assets/home/company2.png") },
-        { logo: require("@/assets/home/company4.png") },
-        { logo: require("@/assets/home/company9.png") },
-        { logo: require("@/assets/home/company3.png") }
+        { logo: require('@/assets/home/company10.png') },
+        { logo: require('@/assets/home/company5.png') },
+        { logo: require('@/assets/home/company6.png') },
+        { logo: require('@/assets/home/company7.png') },
+        { logo: require('@/assets/home/company8.png') },
+        { logo: require('@/assets/home/company1.png') },
+        { logo: require('@/assets/home/company2.png') },
+        { logo: require('@/assets/home/company4.png') },
+        { logo: require('@/assets/home/company9.png') },
+        { logo: require('@/assets/home/company3.png') }
       ],
       isVisible: {
         f0: false,
@@ -454,49 +454,49 @@ export default {
         f18: false,
         f19: false
       }
-    };
+    }
   },
-  mounted() {
-    document.addEventListener("scroll", this.debounce(this.scroll, 50));
-    this.scroll();
+  mounted () {
+    document.addEventListener('scroll', this.debounce(this.scroll, 50))
+    this.scroll()
   },
   methods: {
-    handleClick() {},
-    scroll() {
-      const list = document.getElementsByClassName("animate__animated");
+    handleClick () {},
+    scroll () {
+      const list = document.getElementsByClassName('animate__animated')
       const judgeIsView = element => {
-        var rect = element.getBoundingClientRect();
+        var rect = element.getBoundingClientRect()
         var viewportWidth =
-          window.innerWidth || document.documentElement.clientWidth;
+          window.innerWidth || document.documentElement.clientWidth
         var viewportHeight =
-          window.innerHeight || document.documentElement.clientHeight;
+          window.innerHeight || document.documentElement.clientHeight
 
-        return rect.top >= 0 && rect.bottom <= viewportHeight;
-      };
+        return rect.top >= 0 && rect.bottom <= viewportHeight
+      }
       for (let i = 0; i < list.length; i++) {
         if (judgeIsView(list[i])) {
-          this.isVisible[`f${i}`] = true;
+          this.isVisible[`f${i}`] = true
         } else {
-          this.isVisible[`f${i}`] = false;
+          this.isVisible[`f${i}`] = false
         }
       }
-      console.log(this.isVisible);
+      console.log(this.isVisible)
     },
-    debounce(fn, delay) {
+    debounce (fn, delay) {
       // 记录上一次的延时器
-      var timer = null;
-      return function() {
+      var timer = null
+      return function () {
         // 清除上一次的演示器
-        clearTimeout(timer);
+        clearTimeout(timer)
         // 重新设置新的延时器
-        timer = setTimeout(function() {
+        timer = setTimeout(function () {
           // 修正this指向问题
-          fn.apply(this);
-        }, delay);
-      };
+          fn.apply(this)
+        }, delay)
+      }
     }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
