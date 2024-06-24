@@ -33,7 +33,7 @@ jobs:
           DEPLOY_KEY: ${{ secrets.ACCESS_TOKEN }}   #  远程连接的ssh秘钥，引用配置
           ARGS: -avz --delete                       # rsync参数
           SERVER_PORT: '22'                         # ssh端口
-          FOLDER: ./                                # 要推送的文件夹，路径相对于代码仓库的根目录
+          FOLDER: ./dist                            # 要推送的文件夹，路径相对于代码仓库的根目录
           SERVER_IP: ${{ secrets.REMOTE_HOST }}     # 远程连接的host，引用配置
           USERNAME: root                            # 远程连接的用户名，引用配置
           SERVER_DESTINATION: /www/wwwroot/company  # 部署到目标文件的路径
