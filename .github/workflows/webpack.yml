@@ -31,10 +31,10 @@ jobs:
       uses: easingthemes/ssh-deploy@v2.1.5
       env:
           SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
-          ARGS: -avz --delete                       # rsync参数
-          REMOTE_PORT: '22'                         # ssh端口
-          SOURCE: ./                            # 要推送的文件夹，路径相对于代码仓库的根目录
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST1 }}     # 远程连接的host，引用配置
+          ARGS: -avz --delete                          # rsync参数
+          REMOTE_PORT: '22'                            # ssh端口
+          SOURCE: ./                                   # 要推送的文件夹，路径相对于代码仓库的根目录
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}      # 远程连接的host，引用配置
           REMOTE_USER: root                            # 远程连接的用户名，引用配置
           TARGET: /www/wwwroot/company  # 部署到目标文件的路径
 
