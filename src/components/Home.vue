@@ -466,8 +466,6 @@ export default {
       const list = document.getElementsByClassName('animate__animated')
       const judgeIsView = element => {
         var rect = element.getBoundingClientRect()
-        var viewportWidth =
-          window.innerWidth || document.documentElement.clientWidth
         var viewportHeight =
           window.innerHeight || document.documentElement.clientHeight
 

@@ -35,21 +35,21 @@
 
 <script>
 export default {
-  name: "Footer",
-  data() {
+  name: 'Footer',
+  data () {
     return {
       productList: [
-        { logo: require("@/assets/footer/web.png"), title: "搭建网站" },
-        { logo: require("@/assets/footer/xcx.png"), title: "小程序" },
-        { logo: require("@/assets/footer/android.png"), title: "安卓开发" },
-        { logo: require("@/assets/footer/apple.png"), title: "苹果开发" },
-        { logo: require("@/assets/footer/h5.png"), title: "H5开发" },
-        { logo: require("@/assets/footer/uniapp.png"), title: "uniapp开发" },
-        { logo: require("@/assets/footer/server.png"), title: "服务器托管" }
+        { logo: require('@/assets/footer/web.png'), title: '搭建网站' },
+        { logo: require('@/assets/footer/xcx.png'), title: '小程序' },
+        { logo: require('@/assets/footer/android.png'), title: '安卓开发' },
+        { logo: require('@/assets/footer/apple.png'), title: '苹果开发' },
+        { logo: require('@/assets/footer/h5.png'), title: 'H5开发' },
+        { logo: require('@/assets/footer/uniapp.png'), title: 'uniapp开发' },
+        { logo: require('@/assets/footer/server.png'), title: '服务器托管' }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
