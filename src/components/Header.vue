@@ -4,9 +4,14 @@
       <img src="@/assets/logo.png" class="logo" />
       <div class="menu">
         <div class="item" v-for="item in menuList" :key="item.title">
-          <a :href="item.link">
+          <router-link
+            :to="item.link"
+            class="nav-link"
+            :class="{ active: isActive(item.link) }"
+            exact
+          >
             {{ item.title }}
-          </a>
+          </router-link>
         </div>
       </div>
       <div class="contact">
@@ -26,18 +31,21 @@ export default {
       routesConfig: routesConfig,
       menuList: [
         {title: '首页', link: '/'},
-        {title: '精选案例', link: '#anli'},
-        {title: 'APP开发', link: '#develop'},
-        {title: '微信开发', link: '#develop'},
-        {title: '系统开发', link: '#develop'},
+        {title: '精选案例', link: '/cases'},
+        {title: 'APP开发', link: '/app'},
+        {title: '微信开发', link: '/wechat'},
+        {title: '系统开发', link: '/system'},
         {title: '关于我们', link: '/about'}
       ]
     }
   },
   methods: {
-    handleSelect (key, keyPath) {
-      console.log(key, keyPath)
-      this.$router.push(key)
+    isActive(link) {
+      // 精确匹配首页，其余以当前路由开头即可
+      if (link === '/') {
+        return this.$route.path === '/';
+      }
+      return this.$route.path.startsWith(link);
     }
   }
 }
@@ -79,16 +87,22 @@ export default {
       display: flex;
       align-items: center;
       .item {
-        a {
+        .nav-link {
           color: #fff;
           text-decoration: none;
           margin-right: 32px;
-          &:hover {
-            color: #078651;
-            font-weight: bold;
-            cursor: pointer!important;
-
-          }
+          transition: color 0.2s, font-weight 0.2s;
+        }
+        .nav-link:hover {
+          color: #078651;
+          font-weight: bold;
+          cursor: pointer!important;
+        }
+        .nav-link.active {
+          color: #e6eeea;
+          font-weight: bold;
+          border-bottom: 2px solid #e6eeea;
+          text-shadow: 1px 1px 2px #000, 0 0 1px #000;
         }
       }
     }
