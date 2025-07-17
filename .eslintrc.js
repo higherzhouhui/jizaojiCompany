@@ -7,23 +7,28 @@ module.exports = {
   },
   env: {
     browser: true,
+    node: true
   },
   extends: [
-    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential', 
-    // https://github.com/standard/standard/blob/master/docs/RULES-en.md
+    'plugin:vue/essential',
     'standard'
   ],
-  // required to lint *.vue files
   plugins: [
     'vue'
   ],
-  // add your custom rules here
   rules: {
-    // allow async-await
     'generator-star-spacing': 'off',
-    // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'comma-dangle': 'off',
+    'semi': 'off',
+    'no-trailing-spaces': 'off',
+    'eol-last': 'off',
+    'space-before-function-paren': 'off',
+    'quotes': 'off',
+    'indent': 'off',
+    'no-unused-vars': 'warn',
+    'no-console': 'off',
+    'vue/valid-template-root': 'error',
+    'vue/no-unused-vars': 'warn'
   }
-}
+} 
