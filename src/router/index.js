@@ -5,7 +5,7 @@ import SelectedCases from '@/components/SelectedCases'
 import AppDevelopment from '@/components/AppDevelopment'
 import WeChatDevelopment from '@/components/WeChatDevelopment'
 import SystemDevelopment from '@/components/SystemDevelopment'
-import AboutUs from '@/components/AboutUs'
+import AboutUs from '@/components/About'
 import News from '@/components/News'
 
 Vue.use(Router)
