@@ -6,6 +6,7 @@ import AppDevelopment from '@/components/AppDevelopment'
 import WeChatDevelopment from '@/components/WeChatDevelopment'
 import SystemDevelopment from '@/components/SystemDevelopment'
 import AboutUs from '@/components/AboutUs'
+import News from '@/components/News'
 
 Vue.use(Router)
 
@@ -39,6 +40,11 @@ export const routesConfig = [
     path: '/about',
     name: '关于我们',
     component: AboutUs
+  },
+  {
+    path: '/news',
+    name: '新闻动态',
+    component: News
   }
 ]
 

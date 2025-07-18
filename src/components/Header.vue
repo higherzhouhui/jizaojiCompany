@@ -2,7 +2,7 @@
   <div class="container">
     <div class="content">
       <img src="@/assets/logo.png" class="logo" />
-      <div class="menu">
+      <div class="menu" :class="{ open: menuOpen }">
         <div class="item" v-for="item in menuList" :key="item.title">
           <router-link
             :to="item.link"
@@ -14,11 +14,18 @@
           </router-link>
         </div>
       </div>
+      <div class="hamburger" @click="menuOpen = !menuOpen">
+        <span :class="{ 'bar': true, 'open': menuOpen }"></span>
+        <span :class="{ 'bar': true, 'open': menuOpen }"></span>
+        <span :class="{ 'bar': true, 'open': menuOpen }"></span>
+      </div>
       <div class="contact">
         <img src="@/assets/phone.png" class="phone" />
         <span>185-1601-0812</span>
       </div>
     </div>
+    <!-- 移动端遮罩 -->
+    <div v-if="menuOpen" class="menu-mask" @click="menuOpen = false"></div>
   </div>
 </template>
 
@@ -35,23 +42,28 @@ export default {
         {title: 'APP开发', link: '/app'},
         {title: '微信开发', link: '/wechat'},
         {title: '系统开发', link: '/system'},
+        {title: '新闻动态', link: '/news'},
         {title: '关于我们', link: '/about'}
-      ]
+      ],
+      menuOpen: false
     }
   },
   methods: {
     isActive(link) {
-      // 精确匹配首页，其余以当前路由开头即可
       if (link === '/') {
         return this.$route.path === '/';
       }
       return this.$route.path.startsWith(link);
     }
+  },
+  watch: {
+    $route() {
+      this.menuOpen = false;
+    }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 .container {
   height: 60px;
@@ -67,43 +79,96 @@ export default {
   .logo {
     height: 50px;
   }
-  .el-menu-demo {
-    border: none;
-  }
   .content {
     width: 1100px;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 100%;
+    position: relative;
     @media screen and (max-width: 1100px) {
       width: 100%;
-      .menu {
-        display: none!important;
-      }
     }
     .menu {
       display: flex;
       align-items: center;
+      transition: all 0.3s;
       .item {
+        margin: 0 18px;
         .nav-link {
           color: #fff;
           text-decoration: none;
-          margin-right: 32px;
           transition: color 0.2s, font-weight 0.2s;
+          padding: 0 2px;
+        }
+        .nav-link:last-child {
+          margin-right: 0;
         }
         .nav-link:hover {
-          color: #078651;
+          color: #fff;
           font-weight: bold;
           cursor: pointer!important;
         }
         .nav-link.active {
-          color: #e6eeea;
+          color: #fff;
           font-weight: bold;
-          border-bottom: 2px solid #e6eeea;
+          border-bottom: 2px solid #fff;
           text-shadow: 1px 1px 2px #000, 0 0 1px #000;
         }
+      }
+      @media screen and (max-width: 900px) {
+        position: fixed;
+        left: 0;
+        top: 60px;
+        width: 180px;
+        max-width: 320px;
+        height: 100vh;
+        background: #222;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 24px 24px 24px;
+        box-shadow: 2px 0 16px rgba(0,0,0,0.12);
+        transform: translateX(-100%);
+        z-index: 1001;
+        border-radius: 0 12px 12px 0;
+        .item {
+          margin-bottom: 18px;
+          .nav-link {
+            margin-right: 0;
+            font-size: 1.1rem;
+            display: block;
+          }
+        }
+        &.open {
+          transform: translateX(0);
+        }
+      }
+    }
+    .hamburger {
+      display: none;
+      width: 32px;
+      height: 32px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 1002;
+      margin-left: 16px;
+      span.bar {
+        display: block;
+        width: 26px;
+        height: 3px;
+        background: #fff;
+        margin: 4px 0;
+        border-radius: 2px;
+        transition: all 0.3s;
+      }
+      &.open span.bar {
+        background: #078651;
+      }
+      @media screen and (max-width: 900px) {
+        display: flex;
       }
     }
     .contact {
@@ -119,6 +184,24 @@ export default {
         line-height: 25px;
         font-weight: bold;
       }
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
+    }
+  }
+  .menu-mask {
+    display: none;
+  }
+  @media screen and (max-width: 900px) {
+    .menu-mask {
+      display: block;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.3);
+      z-index: 1000;
     }
   }
 }

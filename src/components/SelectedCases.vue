@@ -19,7 +19,7 @@
 
     <!-- 案例展示 -->
     <div class="cases-list">
-      <div class="case-card" v-for="(item, idx) in filteredCases" :key="idx">
+      <div class="case-card" v-for="(item, idx) in filteredCases" :key="idx" @click="showDetail(item)">
         <div class="case-image">
           <img :src="item.img" :alt="item.title" />
           <div class="case-overlay">
@@ -45,6 +45,36 @@
       </div>
     </div>
 
+    <!-- 案例详情弹窗 -->
+    <div v-if="showDialog" class="case-dialog-mask" @click.self="showDialog = false">
+      <div class="case-dialog">
+        <h2>{{ dialogData.title }}</h2>
+        <div class="case-meta">
+          <span>{{ dialogData.industry }}</span>
+          <span>{{ dialogData.duration }}</span>
+        </div>
+        <img :src="dialogData.img" :alt="dialogData.title" class="case-dialog-img" />
+        <div class="case-dialog-desc">{{ dialogData.desc }}</div>
+        <div class="case-dialog-section">
+          <b>主要技术：</b>
+          <span v-for="tech in dialogData.technologies" :key="tech" class="tech-tag">{{ tech }}</span>
+        </div>
+        <div class="case-dialog-section">
+          <b>项目亮点：</b>
+          <ul>
+            <li v-for="feature in dialogData.features" :key="feature">{{ feature }}</li>
+          </ul>
+        </div>
+        <button class="close-btn" @click="showDialog = false">关闭</button>
+      </div>
+    </div>
+    <!-- 客户logo墙 -->
+    <div class="logo-wall">
+      <h3>部分合作客户</h3>
+      <div class="logo-list">
+        <img v-for="(logo, idx) in logoList" :key="idx" :src="logo.src" :alt="logo.alt" class="logo-item" />
+      </div>
+    </div>
     <!-- 统计数据 -->
     <div class="stats-section">
       <div class="stats-item">
@@ -73,12 +103,19 @@ export default {
   data() {
     return {
       activeCategory: 'all',
+      showDialog: false,
+      dialogData: {},
       categories: [
         { id: 'all', name: '全部案例' },
         { id: 'app', name: 'APP开发' },
         { id: 'wechat', name: '微信开发' },
         { id: 'system', name: '系统开发' },
-        { id: 'web', name: '网站建设' }
+        { id: 'web', name: '网站建设' },
+        { id: 'finance', name: '金融' },
+        { id: 'energy', name: '能源' },
+        { id: 'retail', name: '零售' },
+        { id: 'gov', name: '政务' },
+        { id: 'health', name: '健康险' }
       ],
       cases: [
         {
@@ -168,8 +205,76 @@ export default {
           duration: '1个月',
           technologies: ['Vue.js', '响应式设计', 'SEO优化', '内容管理'],
           features: ['品牌展示', '产品介绍', '在线咨询', '新闻动态']
+        },
+        // 新增案例
+        {
+          id: 19,
+          category: 'finance',
+          img: require('@/assets/home/company8.png'),
+          title: '银行智能风控平台',
+          desc: '为大型银行定制的智能风控系统，实现实时风险监控与自动预警，提升金融安全。',
+          industry: '金融',
+          duration: '8个月',
+          technologies: ['大数据', 'AI风控', 'Spring Boot', 'Kafka'],
+          features: ['实时监控', '自动预警', '多维度数据分析', '合规管理']
+        },
+        {
+          id: 20,
+          category: 'energy',
+          img: require('@/assets/home/company9.png'),
+          title: '能源企业数据中台',
+          desc: '为能源集团搭建统一数据中台，实现多业务系统数据整合与智能分析。',
+          industry: '能源',
+          duration: '10个月',
+          technologies: ['数据中台', 'ETL', 'BI', '微服务'],
+          features: ['数据整合', '智能分析', '多系统对接', '可视化报表']
+        },
+        {
+          id: 21,
+          category: 'retail',
+          img: require('@/assets/home/company10.png'),
+          title: '零售集团会员营销平台',
+          desc: '为全国连锁零售集团开发会员营销平台，支持积分、优惠券、精准营销等功能。',
+          industry: '零售',
+          duration: '6个月',
+          technologies: ['小程序', '大数据', '营销自动化'],
+          features: ['会员管理', '积分系统', '营销活动', '数据分析']
+        },
+        {
+          id: 22,
+          category: 'gov',
+          img: require('@/assets/home/company7.png'),
+          title: '智慧政务一体化平台',
+          desc: '为地方政府打造的政务服务平台，集成审批、办事、数据共享等功能，提升政务效率。',
+          industry: '政务',
+          duration: '12个月',
+          technologies: ['Vue.js', 'Spring Cloud', '政务API'],
+          features: ['在线审批', '数据共享', '智能办事', '移动端适配']
+        },
+        {
+          id: 23,
+          category: 'health',
+          img: require('@/assets/home/company6.png'),
+          title: '健康险核心业务系统',
+          desc: '为保险公司开发的健康险核心系统，支持保单管理、理赔、智能核保等业务。',
+          industry: '医疗健康保险',
+          duration: '9个月',
+          technologies: ['Java', 'Oracle', '规则引擎'],
+          features: ['保单管理', '理赔管理', '智能核保', '客户服务']
         }
-      ]
+      ],
+      logoList: [
+        require('@/assets/home/company1.png'),
+        require('@/assets/home/company2.png'),
+        require('@/assets/home/company3.png'),
+        require('@/assets/home/company4.png'),
+        require('@/assets/home/company5.png'),
+        require('@/assets/home/company6.png'),
+        require('@/assets/home/company7.png'),
+        require('@/assets/home/company8.png'),
+        require('@/assets/home/company9.png'),
+        require('@/assets/home/company10.png')
+      ].map((src, i) => ({ src, alt: `客户logo${i+1}` }))
     }
   },
   computed: {
@@ -178,6 +283,12 @@ export default {
         return this.cases;
       }
       return this.cases.filter(case_item => case_item.category === this.activeCategory);
+    }
+  },
+  methods: {
+    showDetail(item) {
+      this.dialogData = item;
+      this.showDialog = true;
     }
   }
 }
@@ -358,6 +469,93 @@ export default {
   color: #666;
 }
 
+/* 案例详情弹窗 */
+.case-dialog-mask {
+  position: fixed;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.case-dialog {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 520px;
+  width: 96vw;
+  padding: 32px 24px 24px 24px;
+  box-shadow: 0 8px 32px rgba(7,134,81,0.13);
+  position: relative;
+}
+.case-dialog h2 {
+  font-size: 1.3rem;
+  color: #078651;
+  margin-bottom: 8px;
+}
+.case-dialog .case-meta {
+  margin-bottom: 12px;
+  color: #999;
+  font-size: 0.95rem;
+  display: flex;
+  gap: 18px;
+}
+.case-dialog-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.case-dialog-desc {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.case-dialog-section {
+  margin-bottom: 12px;
+  font-size: 0.98rem;
+}
+.close-btn {
+  background: #078651;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  position: absolute;
+  right: 24px;
+  bottom: 18px;
+  transition: background 0.2s;
+}
+.close-btn:hover {
+  background: #055c38;
+}
+.logo-wall {
+  margin: 48px 0 24px 0;
+  text-align: center;
+}
+.logo-wall h3 {
+  font-size: 1.1rem;
+  color: #078651;
+  margin-bottom: 18px;
+  font-weight: bold;
+}
+.logo-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+.logo-item {
+  width: 80px;
+  height: 48px;
+  object-fit: contain;
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(7,134,81,0.04);
+}
 @media (max-width: 768px) {
   .cases-list {
     grid-template-columns: 1fr;
@@ -376,6 +574,14 @@ export default {
   .stats-section {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+  }
+  .logo-list {
+    gap: 12px;
+  }
+  .logo-item {
+    width: 60px;
+    height: 36px;
+    padding: 4px;
   }
 }
 </style> 
